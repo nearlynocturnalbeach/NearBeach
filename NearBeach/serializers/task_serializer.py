@@ -9,7 +9,7 @@ from NearBeach.models import (
 
 class TaskSerializer(serializers.Serializer):
     group_list = serializers.PrimaryKeyRelatedField(
-        many=False,
+        many=True,
         queryset=Group.objects.filter(
             is_deleted=False,
         ),

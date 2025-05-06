@@ -27,7 +27,7 @@ class TaskViewSet(viewsets.ModelViewSet):
                 serializer.errors,
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        group_list = request.data.getlist('group_list', [])
+        group_list = request.data.get('group_list', [])
         if group_list is None or len(group_list) == 0:
             return Response(
                 "Groups are missing",
